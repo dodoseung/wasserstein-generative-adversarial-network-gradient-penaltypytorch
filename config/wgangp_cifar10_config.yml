@@ -3,7 +3,7 @@ data:
   seed: 777
   data_path: '~/.pytorch/CIFAR_data/'
   download: True
-  batch_size: 1024
+  batch_size: 256
   shuffle: True
   drop_last: True
   download: True
@@ -25,15 +25,13 @@ model:
   crt_conv_kernels : [5,5,5,5]
   crt_conv_strides : [2,2,2,1]
   crt_conv_pads : [2,2,2,2]
-  crt_dropout_rate : 0.4
+  crt_dropout_rate : 0.2
 
 # Training parameters
 train:
-  epochs: 500
-  lr: 0.001
-  betas: [0.9, 0.999]
-  eps: 0.00000001
-  weight_decay: 0.01
+  epochs: 10000
+  lr: 0.0002
+  betas: [0.5, 0.999]
   gen_iteration : 5
 
 # Save
@@ -42,4 +40,4 @@ save:
 
 # Other parameters
 others:
-  log_period: 10
+  log_period: 4
